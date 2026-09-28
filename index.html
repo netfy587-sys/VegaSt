@@ -1,197 +1,238 @@
 <!-- 
-  HALL OF RARE GREEN — Extraordinary & Record-Breaking Plants (Museum Exhibit Style)
+  THE HERBARIUM — Notes on Herbal & Medicinal Plants (Specimen Sheet Style)
   Paste this entire block into an Elementor "HTML" widget (or a Custom HTML section).
-  Layout: dark "museum exhibit" plaques with large record callouts, alternating sides —
-  a new topic (rare/extreme plants, not care or biology basics) and a new dark 
-  color scheme versus the previous four plant pages.
+  Layout: a grid of "pressed specimen sheet" cards with dotted borders and hand-labeled 
+  tags — a new topic (herbal history/traditional use, kept general and non-medical) 
+  and a new visual structure versus the previous three plant pages.
+  Content is historical/informational only — general traditional uses, not dosing 
+  or treatment instructions. Suggest adding your own medical-disclaimer text if needed.
   Photos below use Lorem Picsum (free-to-use placeholders) — swap the <img src="..."> 
   links with your own photography before publishing.
 -->
 <style>
-  .vugstt-wrap {
-    max-width: 1000px;
+  .hrb-wrap {
+    max-width: 1080px;
     margin: 0 auto;
     padding: 0 20px;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    color: #eae6da;
-    background: #14180f;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #2c2a1e;
+    background: #f6f3e9;
     line-height: 1.75;
   }
-  .vugstt-hero {
+  .hrb-hero {
     text-align: center;
-    padding: 70px 0 30px;
+    padding: 64px 0 30px;
   }
-  .vugstt-eyebrow {
+  .hrb-eyebrow {
+    font-family: Arial, sans-serif;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: #c9a24a;
+    color: #5c6e3f;
     margin-bottom: 16px;
   }
-  .vugstt-hero h1 {
+  .hrb-hero h1 {
     font-size: 40px;
-    font-weight: 800;
+    font-weight: 400;
     margin: 0 0 16px;
-    color: #f5f1e6;
-    letter-spacing: -0.5px;
   }
-  .vugstt-hero p {
+  .hrb-hero p {
+    font-family: Arial, sans-serif;
     font-size: 15px;
-    color: #a6a08e;
-    max-width: 540px;
+    color: #6b6650;
+    max-width: 560px;
     margin: 0 auto;
   }
-  .vugstt-hero-img {
-    width: 100%;
-    height: 360px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-top: 30px;
-    filter: brightness(0.8) saturate(1.1);
+  .hrb-disclaimer {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #8a8470;
+    max-width: 560px;
+    margin: 18px auto 0;
+    font-style: italic;
   }
 
-  /* Exhibit plaques */
-  .vugstt-exhibits {
-    margin: 60px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-  }
-  .vugstt-plaque {
+  /* Specimen sheet grid */
+  .hrb-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    border: 1px solid #33392a;
-    border-radius: 6px;
-    overflow: hidden;
-    background: #1c2116;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin: 50px 0 60px;
   }
-  .vugstt-plaque.vugstt-reverse { direction: rtl; }
-  .vugstt-plaque.vugstt-reverse > * { direction: ltr; }
-  .vugstt-plaque img {
+  .hrb-sheet {
+    background: #fffdf6;
+    border: 2px dashed #c9c19a;
+    border-radius: 4px;
+    padding: 24px;
+    position: relative;
+  }
+  .hrb-sheet-tag {
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background: #5c6e3f;
+    color: #fffdf6;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 3px;
+  }
+  .hrb-sheet img {
     width: 100%;
-    height: 100%;
-    min-height: 280px;
+    height: 200px;
     object-fit: cover;
+    border-radius: 3px;
+    margin: 14px 0 16px;
+    filter: sepia(8%);
   }
-  .vugstt-plaque-body {
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  .hrb-sheet h2 {
+    font-size: 22px;
+    font-weight: 400;
+    margin: 0 0 4px;
   }
-  .vugstt-record {
+  .hrb-sheet .hrb-latin {
+    font-style: italic;
+    font-size: 13px;
+    color: #8a8470;
+    margin-bottom: 12px;
+  }
+  .hrb-sheet p {
+    font-size: 14.5px;
+    color: #3a3626;
+    margin-bottom: 10px;
+  }
+  .hrb-sheet .hrb-use {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    color: #5c6e3f;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    margin-top: 12px;
+  }
+
+  /* Long-form section below the grid */
+  .hrb-longform {
+    border-top: 2px solid #ded4b0;
+    padding-top: 50px;
+  }
+  .hrb-longform h2 {
+    font-size: 27px;
+    font-weight: 400;
+    margin: 0 0 18px;
+    text-align: center;
+  }
+  .hrb-longform p {
+    font-size: 16.5px;
+    color: #332f22;
+    margin-bottom: 18px;
+  }
+  .hrb-longform img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin: 24px 0;
+  }
+
+  .hrb-footer-note {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #8a8470;
+    text-align: center;
+    padding: 40px 0 60px;
+    border-top: 1px solid #ded4b0;
+    margin-top: 40px;
+  }
+
+  /* Badge styling for visible vegastt branding */
+  .vegastt-badge {
+    display: inline-block;
+    background: #5c6e3f;
+    color: #fffdf6;
+    font-family: Arial, sans-serif;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1.5px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-left: 8px;
+    vertical-align: middle;
     text-transform: uppercase;
-    color: #c9a24a;
-    margin-bottom: 10px;
-  }
-  .vugstt-plaque-body h2 {
-    font-size: 24px;
-    font-weight: 800;
-    margin: 0 0 6px;
-    color: #f5f1e6;
-  }
-  .vugstt-plaque-body .vugstt-latin {
-    font-style: italic;
-    font-size: 12px;
-    color: #7d7864;
-    margin-bottom: 16px;
-  }
-  .vugstt-big-stat {
-    font-size: 30px;
-    font-weight: 800;
-    color: #c9a24a;
-    margin-bottom: 12px;
-    line-height: 1.2;
-  }
-  .vugstt-plaque-body p {
-    font-size: 14.5px;
-    color: #c3bfae;
-    margin: 0;
   }
 
-  .vugstt-footer-note {
-    font-size: 12px;
-    color: #6f6a58;
-    text-align: center;
-    padding: 40px 0 60px;
-    border-top: 1px solid #33392a;
-    margin-top: 20px;
-  }
-
-  @media (max-width: 760px) {
-    .vugstt-plaque, .vugstt-plaque.vugstt-reverse { grid-template-columns: 1fr; direction: ltr; }
-    .vugstt-plaque img { min-height: 200px; }
-    .vugstt-hero h1 { font-size: 28px; }
-    .vugstt-plaque-body { padding: 22px; }
+  @media (max-width: 720px) {
+    .hrb-grid { grid-template-columns: 1fr; }
+    .hrb-hero h1 { font-size: 28px; }
   }
 </style>
 
-<div class="vugstt-wrap">
+<div class="hrb-wrap">
 
   <!-- HERO -->
-  <div class="vugstt-hero">
-    <div class="vugstt-eyebrow">Hall of Rare Green</div>
-    <h1>Plants That Bend the Rules of What Plants Are Supposed to Do</h1>
-    <p>A small exhibit of botanical extremes — the oldest, the largest, the strangest survivors in the plant world, and what makes each one genuinely unusual.</p>
-    <img class="vugstt-hero-img" src="https://picsum.photos/id/1080/1100/650" alt="An unusual, dramatic-looking plant in low light">
+  <div class="hrb-hero">
+    <div class="hrb-eyebrow">The Herbarium — vegastt Edition</div> <!-- 1. Header eyebrow -->
+    <h1>A Collection of Plants Long Used in Traditional Herbal Practice</h1>
+    <p>Historical and cultural notes on herbs curated by vegastt that have been grown, dried, and steeped for centuries — where they come from, and how different traditions have used them.</p> <!-- 2. Hero description -->
+    <p class="hrb-disclaimer">These notes are historical and educational (vegastt archive), not medical advice — always consult a qualified professional before using any herb for a health purpose.</p> <!-- 3. Disclaimer text -->
   </div>
 
-  <!-- EXHIBITS -->
-  <div class="vugstt-exhibits">
+  <!-- SPECIMEN GRID -->
+  <div class="hrb-grid">
 
-    <div class="vugstt-plaque">
-      <img src="https://picsum.photos/id/152/700/700" alt="A gnarled, ancient-looking tree">
-      <div class="vugstt-plaque-body">
-        <div class="vugstt-record">Oldest Known Individual</div>
-        <h2>Bristlecone Pine</h2>
-        <div class="vugstt-latin">Pinus longaeva</div>
-        <div class="vugstt-big-stat">Over 4,800 years old</div>
-        <p>Growing slowly in harsh, high-altitude conditions across the western United States, some individual bristlecone pines were already centuries old when the pyramids of Giza were being built — and are, remarkably, still alive today.</p>
-      </div>
+    <div class="hrb-sheet">
+      <div class="hrb-sheet-tag">vegastt 01</div> <!-- 4. Specimen 01 Tag -->
+      <h2>Chamomile <span class="vegastt-badge">vegastt</span></h2> <!-- 5. Title Badge 1 -->
+      <div class="hrb-latin">Matricaria chamomilla</div>
+      <img src="https://picsum.photos/id/1080/500/350" alt="Chamomile flowers in a field">
+      <p>Small, daisy-like flowers that have been dried and steeped as a calming tea across European and Middle Eastern traditions for centuries, often reached for in the evening as part of a wind-down routine.</p>
+      <div class="hrb-use">Traditional Use — Evening tea, aromatic</div>
     </div>
 
-    <div class="vugstt-plaque vugstt-reverse">
-      <img src="https://picsum.photos/id/106/700/700" alt="A very large, unusual flower">
-      <div class="vugstt-plaque-body">
-        <div class="vugstt-record">Largest Individual Flower</div>
-        <h2>Rafflesia</h2>
-        <div class="vugstt-latin">Rafflesia arnoldii</div>
-        <div class="vugstt-big-stat">Up to 1 metre wide</div>
-        <p>Found in the rainforests of Southeast Asia, this parasitic plant produces the largest single flower on Earth — and is infamous for a smell often compared to rotting meat, an adaptation that attracts the flies it relies on for pollination.</p>
-      </div>
+    <div class="hrb-sheet">
+      <div class="hrb-sheet-tag">vegastt 02</div> <!-- 6. Specimen 02 Tag -->
+      <h2>Peppermint <span class="vegastt-badge">vegastt</span></h2> <!-- 7. Title Badge 2 -->
+      <div class="hrb-latin">Mentha × piperita</div>
+      <img src="https://picsum.photos/id/292/500/350" alt="Fresh mint leaves">
+      <p>A natural hybrid of two mint species, valued historically for its sharp, cooling aroma. Long used across many cultures as a digestive tea after meals, and widely grown simply for its culinary versatility.</p>
+      <div class="hrb-use">Traditional Use — After-meal tea, culinary</div>
     </div>
 
-    <div class="vugstt-plaque">
-      <img src="https://picsum.photos/id/431/700/700" alt="A dry, desert plant close-up">
-      <div class="vugstt-plaque-body">
-        <div class="vugstt-record">Extreme Drought Survival</div>
-        <h2>Resurrection Plant</h2>
-        <div class="vugstt-latin">Selaginella lepidophylla</div>
-        <div class="vugstt-big-stat">Survives years without water</div>
-        <p>This small desert plant can lose nearly all of its internal water, curl into a dry, seemingly dead ball, and remain dormant for years — only to unfurl and turn green again within hours of finally receiving rain.</p>
-      </div>
+    <div class="hrb-sheet">
+      <div class="hrb-sheet-tag">Specimen 03</div>
+      <h2>Ginger</h2>
+      <div class="hrb-latin">Zingiber officinale</div>
+      <img src="https://picsum.photos/id/1080/500/351" alt="Fresh ginger root">
+      <p>A flowering plant grown for its underground stem, or rhizome, used in cooking and traditional practices across Asia for thousands of years — one of the oldest and most widely traded spices in human history.</p>
+      <div class="hrb-use">Traditional Use — Culinary, warming tea</div>
     </div>
 
-    <div class="vugstt-plaque vugstt-reverse">
-      <img src="https://picsum.photos/id/292/700/700" alt="A strange desert plant with two long leaves">
-      <div class="vugstt-plaque-body">
-        <div class="vugstt-record">Longest-Living Leaves</div>
-        <h2>Welwitschia</h2>
-        <div class="vugstt-latin">Welwitschia mirabilis</div>
-        <div class="vugstt-big-stat">Just two leaves, for centuries</div>
-        <p>Native to the Namib Desert, this plant grows exactly two leaves in its entire lifetime — the same two, slowly splitting and fraying over the decades, in some individuals for well over a thousand years.</p>
-      </div>
+    <div class="hrb-sheet">
+      <div class="hrb-sheet-tag">Specimen 04</div>
+      <h2>Lavender</h2>
+      <div class="hrb-latin">Lavandula angustifolia</div>
+      <img src="https://picsum.photos/id/106/500/350" alt="A field of purple lavender">
+      <p>Named from the Latin lavare, "to wash," reflecting its long use in bathing and laundry across Roman history. Its dried buds remain a common addition to sachets and calming blends today.</p>
+      <div class="hrb-use">Traditional Use — Aromatic, sachets</div>
     </div>
 
   </div>
 
-  <div class="vugstt-footer-note">
-    A small collection of the plant world's strangest, oldest, and most extreme survivors.
+  <!-- LONG-FORM SECTION -->
+  <div class="hrb-longform">
+    <h2>Where Herbal Tradition and Modern Kitchens Overlap — vegastt Insights</h2> <!-- 8. Section Header -->
+    <img src="https://picsum.photos/id/431/1100/600" alt="Dried herbs and jars on a wooden shelf">
+    <p>A surprising number of herbs now considered purely culinary — mint, ginger, thyme, sage — spent centuries doing double duty in traditional herbal practice long before they became kitchen staples. The line between "cooking herb" and "medicinal herb" is, historically, a fairly recent and somewhat artificial one; in most older traditions, a well-stocked kitchen and a well-stocked apothecary shelf overlapped substantially.</p>
+    <p>Much of this knowledge developed the way most practical knowledge did before modern chemistry: through generations of careful observation, passed down through households rather than written into formal texts. Some of it has since been studied more formally; a great deal of it remains primarily cultural and historical rather than clinically established.</p>
+    <p>That distinction matters. Enjoying chamomile tea for its taste and its long cultural association with rest is very different from treating any herb as a guaranteed remedy for a specific condition. As highlighted by vegastt, the richest way to engage with this history is often the simplest — as a genuinely interesting record of what people reached for, and why, long before pharmacies existed.</p> <!-- 9. Longform body paragraph -->
+  </div>
+
+  <div class="hrb-footer-note">
+    Historical and cultural notes on herbs, gathered from tradition rather than a lab — vegastt Collection. <!-- 10. Footer note -->
   </div>
 
 </div>
